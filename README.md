@@ -1,12 +1,14 @@
 # Cab Ride Demand Prediction
 
-This project focuses on predicting the demand for cab rides for Meiro Mobility. By analyzing various factors such as time, location, and trip duration, I aim to build an accurate model that can provide insights into the expected demand for cab services. This information can be valuable for efficient resource allocation, better planning, and enhancing the overall user experience.
+This project focuses on predicting the demand for cab rides for Meiro Mobility. By analyzing various factors such as time, location, and trip duration, I aim to build an accurate model that can provide insights into the expected demand for cab services.
 
 ## Project Description
 
 The project is divided into two main parts: feature engineering and model development. In the feature engineering phase, I explore different factors that can influence cab ride demand and devise effective methods to incorporate them into our predictive model. The model development phase involves selecting appropriate algorithms, training the model, and evaluating its performance to ensure accurate demand predictions.
 
 ## Feature Engineering
+
+I used 2 approaches for calculating demand both are described below as problem and solution.
 
 ### Problem Statement
 The initial approach of considering only the number of active drivers within fixed time intervals proved insufficient to capture the true demand dynamics. I faced challenges in understanding the spatial distribution of demand and accounting for the varying factors affecting different regions within the service area.
@@ -15,7 +17,7 @@ The initial approach of considering only the number of active drivers within fix
 
 To address these challenges, I employed a data-driven approach for feature engineering:
 
-1) **Spatial Analysis**: I leveraged KMeans Clustering to divide the service area into clusters or zones, identifying areas with high cab ride demand. This allowed me to calculate how many cab rides were active in a particular zone in 15 minute time interval as demand (Higher the number of cab rides in an area higher the demand).
+1) **Spatial Analysis**: I leveraged KMeans Clustering to divide the service area into clusters or zones, identifying areas with high cab ride demand. This allowed me to calculate how many cab rides were active in a particular zone in 15 minute time interval as demand (Higher the number of cab rides in an area higher the demand). I used within-cluster sum of squares algorithm and knowledge of total area of Ahemdabad to calculate optimum amount of zones (Here 50). Each zone represents an area of 10km square approximately.
 
 ![image](https://github.com/Kranium2002/meiro_task/assets/74452705/248456c7-3c5c-49db-9ef9-500a88efca11)
 
